@@ -95,6 +95,7 @@ export interface KeycloakInitOptions {
    * - `default` - Use default APIs that are available in browsers.
    * - `cordova` - Use a WebView in Cordova.
    * - `cordova-native` - Use Cordova native APIs, this is recommended over `cordova`.
+   * - `capacitor` - Use Capacitor with the @capgo/inappbrowser plugin.
    *
    * It's also possible to pass in a custom adapter for the environment you are running Keycloak in. In order to do so extend the `KeycloakAdapter` interface and implement the methods that are defined there.
    *
@@ -115,7 +116,7 @@ export interface KeycloakInitOptions {
    * });
    * ```
    */
-  adapter?: 'default' | 'cordova' | 'cordova-native' | KeycloakAdapter
+  adapter?: 'default' | 'cordova' | 'cordova-native' | 'capacitor' | KeycloakAdapter
 
   /**
    * Specifies an action to do on load.
@@ -296,7 +297,7 @@ export interface KeycloakLoginOptions {
   locale?: string
 
   /**
-   * Specifies arguments that are passed to the Cordova in-app-browser (if applicable).
+   * Specifies arguments that are passed to the Cordova/Capacitor in-app-browser (if applicable).
    * Options 'hidden' and 'location' are not affected by these arguments.
    * All available options are defined at https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/.
    * Example of use: { zoom: "no", hardwareback: "yes" }
